@@ -1,11 +1,9 @@
 name: Build docker image
 on:
   push:
-    branches:
-      - master
     tags:
       - '**'
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   build-push:
@@ -29,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ethpandaops/ethereum-genesis-generator
+          images: pk910/ethereum-genesis-generator
           flavor: latest=true
           tags: |
             type=ref,event=branch
